@@ -47,6 +47,13 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -60,6 +67,10 @@ body {
   font-feature-settings: 'cv11', 'ss03', 'ss07', 'dlig';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /* Top Navigation */
@@ -73,7 +84,6 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--space-xl);
-  border-bottom: 1px solid var(--hairline-soft);
   font-size: 14px;
   font-weight: 500;
   letter-spacing: -0.14px;
@@ -289,15 +299,120 @@ a:hover {
   background-color: var(--canvas);
 }
 
+/* Era Hero (Scenes page) */
+.era-hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.era-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.era-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.era-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(9,9,9,0.95) 0%, rgba(9,9,9,0.4) 50%, rgba(9,9,9,0.1) 100%);
+}
+
+.era-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 80px var(--space-xl);
+}
+
+.era-hero-content p {
+  color: var(--ink-muted);
+  margin-top: var(--space-md);
+  max-width: 650px;
+}
+
+.era-status {
+  margin-top: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.era-status-label {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.13px;
+  padding: 3px 10px;
+  background: var(--surface-2);
+  color: var(--ink);
+}
+
+.era-ar-scene {
+  display: inline-block;
+  padding: 6px 14px;
+  background: var(--surface-2);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.13px;
+  border: 1px solid var(--hairline);
+}
+
+@media (max-width: 810px) {
+  .era-hero {
+    min-height: 50vh;
+    align-items: center;
+  }
+
+  .era-hero-content {
+    padding: 60px var(--space-lg);
+  }
+}
+
+/* Sound Toggle */
+.sound-toggle {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--surface-1);
+  color: var(--ink);
+  border: 1px solid var(--hairline);
+  cursor: pointer;
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.13px;
+  transition: background-color 0.2s;
+}
+
+.sound-toggle:hover {
+  background-color: var(--surface-2);
+}
+
 /* Hero Section */
 .hero {
   min-height: 80vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: var(--space-xxl) var(--space-xl);
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 80px var(--space-xl);
   position: relative;
   overflow: hidden;
 }
@@ -306,10 +421,10 @@ a:hover {
   position: absolute;
   inset: 0;
   z-index: 0;
-  opacity: 0.3;
 }
 
-.hero-bg img {
+.hero-bg img,
+.hero-bg video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -318,14 +433,12 @@ a:hover {
 .hero-content {
   position: relative;
   z-index: 1;
-  max-width: 900px;
+  max-width: 700px;
+  mix-blend-mode: difference;
 }
 
 .hero-content p {
   margin-top: var(--space-lg);
-  max-width: 650px;
-  margin-left: auto;
-  margin-right: auto;
   color: var(--ink-muted);
 }
 
@@ -333,7 +446,6 @@ a:hover {
   margin-top: var(--space-xl);
   display: flex;
   gap: var(--space-sm);
-  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -644,6 +756,22 @@ a:hover {
   .section {
     padding: 48px 0;
   }
+
+  .hero {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--space-xxl) var(--space-xl);
+  }
+
+  .hero-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -671,6 +799,18 @@ a:hover {
   .hamburger {
     display: block;
   }
+}
+
+/* Scroll Animation */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Utility */
