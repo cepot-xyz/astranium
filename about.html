@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Astranium</title>
+  <link rel="icon" href="WebAssets/logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="top-nav">
+    <div class="top-nav-logo">
+      <img src="WebAssets/logo.png" alt="Astranium">
+      <span>Astranium</span>
+    </div>
+    <button class="hamburger">&#9776;</button>
+    <div class="top-nav-links">
+      <a href="index.html">Home</a>
+      <a href="scenes.html">Scenes</a>
+      <a href="download.html">Download</a>
+      <a href="about.html">About</a>
+      <a href="credits.html">Credits</a>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <h1 class="display-xl">About the Project</h1>
+    <p class="body-lg">
+      What began as an ordinary campus assignment - a solar system in Augmented Reality -
+      grew into something far larger.
+    </p>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+
+      <div style="max-width: 800px; margin-bottom: 64px;">
+        <h2 class="display-md" style="margin-bottom: 16px;">Origin</h2>
+        <p class="body-lg" style="color: var(--ink-muted);">
+          Astranium started as a group project for a university course: an AR-based solar system
+          explorer for Android, built with Unity, AR Foundation, and ARCore. The original team
+          scoped a functional taster of the solar system - 11 planets, 13 constellations,
+          marker-based tracking.
+        </p>
+        <p class="body-lg mt-lg" style="color: var(--ink-muted);">
+          One team member, however, saw potential beyond the assignment brief. Taking the initiative
+          to develop a parallel <strong>Desktop Version</strong>, they expanded the project into
+          a full cosmic narrative - the Five Ages of the Universe.
+        </p>
+      </div>
+
+      <div style="margin-bottom: 64px;">
+        <h2 class="display-md" style="margin-bottom: 16px;">Technical Overview</h2>
+        <p class="body-lg" style="color: var(--ink-muted); margin-bottom: 24px;">
+          The project spans two branches that coexist in the same Unity project, sharing assets,
+          scripts, and design language while targeting different platforms.
+        </p>
+        <div class="spotlight-grid">
+          <div class="gradient-spotlight gradient-violet">
+            <p class="caption" style="opacity: 0.7;">Branch</p>
+            <h3>AR Version</h3>
+            <p style="margin-top: 8px; color: rgba(255,255,255,0.8);">
+              4 scenes - MainMenu, ScanningMarker, Angkasa, LibraryPlanet. Marker-based
+              solar system with 11 planets and 13 constellations. Fully intact and build-ready.
+            </p>
+          </div>
+          <div class="gradient-spotlight gradient-orange">
+            <p class="caption" style="opacity: 0.7;">Branch</p>
+            <h3>Desktop Version</h3>
+            <p style="margin-top: 8px; color: rgba(255,255,255,0.8);">
+              8 scenes - MainMenuDesktop, AngkasaDesktop, LibraryPlanetDesktop, and the
+              Five Ages series. WASD + Mouse Look, orbit mechanics, and custom VFX.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gradient-spotlight gradient-magenta" style="margin-bottom: 64px;">
+        <p class="caption" style="opacity: 0.7;">Project Status</p>
+        <h3>Active Development</h3>
+        <p style="margin-top: 8px; color: rgba(255,255,255,0.8); max-width: 600px;">
+          Primordial, Stelliferous, and Degenerate eras are playable. Black Hole and Dark eras
+          are in planning. A loading screen system for seamless scene transitions is on the roadmap.
+        </p>
+      </div>
+
+      <div style="margin-bottom: 64px;">
+        <h2 class="display-md" style="margin-bottom: 24px;">Tech Stack</h2>
+        <div class="tech-stack">
+          <div class="tech-item">
+            <span class="label">Engine</span>
+            <span class="value">Unity 6000.3.10f1</span>
+          </div>
+          <div class="tech-item">
+            <span class="label">Render Pipeline</span>
+            <span class="value">URP</span>
+          </div>
+          <div class="tech-item">
+            <span class="label">Scripting</span>
+            <span class="value">IL2CPP</span>
+          </div>
+          <div class="tech-item">
+            <span class="label">Target Platforms</span>
+            <span class="value">Windows &amp; Android</span>
+          </div>
+          <div class="tech-item">
+            <span class="label">AR Framework</span>
+            <span class="value">AR Foundation 6.3.4</span>
+          </div>
+          <div class="tech-item">
+            <span class="label">Total C&#35; Scripts</span>
+            <span class="value">21</span>
+          </div>
+          <div class="tech-item">
+            <span class="label">Scenes (Desktop)</span>
+            <span class="value">8</span>
+          </div>
+          <div class="tech-item">
+            <span class="label">Custom Shaders</span>
+            <span class="value">ScreenVideo (additive)</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="display-md" style="margin-bottom: 16px;">Challenges</h2>
+        <p class="body-lg" style="color: var(--ink-muted);">
+          Developing a project of this scope alone comes with its share of setbacks. A YAML
+          corruption incident during the development of AngkasaDesktop - caused by editing
+          the scene file externally while Unity was open - taught a hard lesson in
+          workflow discipline. Scene recovery was performed from a backup.
+        </p>
+        <p class="body-lg mt-lg" style="color: var(--ink-muted);">
+          The entire project is built by a solo developer, assisted by <strong>Ocha</strong>,
+          an AI CLI assistant that aids in scripting, YAML analysis, Unity log debugging,
+          documentation, and cosmic narrative crafting.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p>An independent interactive project exploring the life cycle of the universe through real-time 3D experiences built with Unity.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <a href="index.html">Home</a>
+        <a href="scenes.html">Scenes</a>
+        <a href="about.html">About</a>
+        <a href="download.html">Download</a>
+        <a href="credits.html">Credits</a>
+      </div>
+      <div class="footer-col">
+        <h4>Scenes</h4>
+        <a href="scenes.html">Primordial Era</a>
+        <a href="scenes.html">Stelliferous Era</a>
+        <a href="scenes.html">Degenerate Era</a>
+        <a href="scenes.html">Black Hole Era</a>
+        <a href="scenes.html">Dark Era</a>
+      </div>
+      <div class="footer-col">
+        <h4>Tech</h4>
+        <span>Unity 6000.3.10f1</span><br>
+        <span>URP</span><br>
+        <span>IL2CPP</span><br>
+        <span>Windows &amp; Android</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Astranium. Built with dedication, physics, and a lot of coffee.</span>
+      <span class="caption">Last updated June 2026</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
