@@ -497,6 +497,21 @@ a:hover {
   color: var(--ink);
 }
 
+/* Download Grid */
+.download-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 810px) {
+  .download-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .gradient-spotlight h3 {
   font-size: 24px;
   font-weight: 400;
